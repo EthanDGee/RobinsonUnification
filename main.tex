@@ -82,7 +82,7 @@ $\dagger$ Present address: Rice University, Houston, Texas.
 %TODO fix firstpage footer
 Journal of the Association for Computing Machinery, Val. 1 2, No. 1 (January, 1965), pp. 23-41
 
-\newpage
+
 
 From the theoretical point of view, however, an inference principle need only be \emph{sound} (i.e., allow only logical consequences of premisses to be deduced from them) and \emph{effective} (i.e., it must be algorithmically decidable whether an alleged application of the interference principle is indeed an application of it). When the agent carrying out the application of an inference principle is a modern computing machine, the traditional limitation on the complexity of inference principles is no longer very appropriate. More powerful principles, involving perhaps a much greater amount of combinatorial information-processing for a single application, become a possibility.
 
@@ -101,7 +101,7 @@ Accordingly we introduce the following definitions (following in part the nomenc
 \begin{align*}
     u, v, w, x, y, z, u_1 , v_1 , w_1 , x_1 , y_1 , z_1 , u_2 , \dotsm , etc.
 \end{align*}
-\newpage
+
 
 \subsection{Function symbols}. The following symbols, in alphabetical order, are function symbols of degree $n$, for each $n\geqq0$:
 \begin{align*}
@@ -141,7 +141,6 @@ Accordingly we introduce the following definitions (following in part the nomenc
 
 In writing well-formed expressions for illustrative purposes, we follow the more readable plan of enclosing the $n$ terms following a function symbol or predicate symbol of degree $n$ by a pair of parentheses, separating the terms, if there are two or more, by commas. We can then unambiguously omit all superscripts from symbols. In writing finite sets, we follow the usual convention of
 
-\newpage
 \noindent enclosing the members in a pair of braces and of separating the members by commas, with the understanding that the order of writing the members in immaterial.
 
 \subsection{Herbrand universes}. With any set $S$ of clauses there is associated a set of ground terms called the Herbrand universe of $S$, as follows: let $F$ be the set of all function symbols which occur in $S$. If $F$ contains any function symbols of degree 0, the functional vocabulary of $S$ is $F$; otherwise it is the set $\{a\}\cup F$. The Herbrand universe of $S$ is then the set of all ground terms in which there occur only symbols in the functional vocabulary of $S$.
@@ -158,13 +157,11 @@ From the definition of satisfiability, it is clear that any set of clauses which
 
 Evidently any model of $\{C,D\}$ is also a model of $\{C,D,R\}$, where $R$ is a ground resolvent of $C$ and $D$. Not all pairs of ground clauses have ground resolvents, and some have more than one; but in no case, as is clear from the definitions, can two ground clauses have more than a finite number of ground resolvents.
 
-\subsection{Ground resolution}. If $S$ is any set of ground clauses, then the ground resolution of $S$, denoted by $\mathscr{R}(S)$, is the set of ground clauses consisting of the members of $S$ together with all ground resolvents of all pairs of members of $S$.
+\subsection{Ground resolution}. If $S$ is any set of ground clauses, then the ground resolution of $S$, denoted by $\mathcal{R}(S)$, is the set of ground clauses consisting of the members of $S$ together with all ground resolvents of all pairs of members of $S$.
 
-\subsection{$N$-th ground resolution}. If $S$ is any set of ground clauses, then the $n$th ground resolution of $S$, denoted by $\mathscr{R}^n(S)$, is defined for each $n\geqq 0$ as follows: $\mathscr{R}^0(S) = S$; and for $n\geqq 0$, $\mathscr{R}^{n+1} = \mathscr{R}(\mathscr{R}^n(S))$.
+\subsection{$N$-th ground resolution}. If $S$ is any set of ground clauses, then the $n$th ground resolution of $S$, denoted by $\mathcal{R}^n(S)$, is defined for each $n\geqq 0$ as follows: $\mathcal{R}^0(S) = S$; and for $n\geqq 0$, $\mathcal{R}^{n+1} = \mathcal{R}(\mathcal{R}^n(S))$.
 
 This completes the first batch of definitions. The next sections are concerned with the various forms that Herbrand's Theorem takes on in our system. To each such form, there is a type of refutation procedure which that form suggests
-
-\newpage
 
 \noindent and justifies. The basic version is stated as follows (cf. \cite{davis_1960,gilmore_1960}):
 
@@ -186,11 +183,7 @@ Of course, any specific procedure of this sort must make the selection of \\$P_0
 
 The major combinatorial obstacle to efficiency for level-saturation procedures is the enormous rate of growth of the finite sets $H_j$ and $H_j(S)$ as $j$ increases, at least for most interesting sets $S$. These growth rates were analyzed in some detail in \cite{robinson_1963}, and some examples were there given of some quite simple unsatisfiable S for which the earliest unsatisfiable  $H_j(S)$ is so large as to be absolutely beyond the limits of feasibility.
 
-An interesting heuristic remark is that, for every finite set $S$ of clauses which is unsatisfiable and which has a refutation one could possibly construct, there is at least one reasonably small finite subset of the Herbrand universe of $S$ such that $P(S)$ is unsatisfiable and such that $P$ is \emph{minimal} in the sense that $Q(S)$ is satisfiable for each proper subset $Q$ of $P$. Such a $P$ was called a \emph{proof set} for $S$ in \cite{robinson_1963}. If only, then, a benevolent and omniscient demon were available who could provide us, in reasonable time, with a proof set $P$ for each unsatisfiable finite set $S$ of clauses that we considered, we could simply arrange to saturate $S$ over $P$ and then extract a suitable refutation of $S$ from the resulting finite unsatisfiable set $P(S)$ of ground clauses. This was in fact the underlying scheme of a computer program reported in \cite{robinson_1963}, in which the part of the demon is played, as best his ingenuity allows, by the mathematician using the program. What is really
-
-\newpage
-
-wanted, to be sure, is a simulation of the proof set demon on the computer; but this would appear, intuitively, to be out of the question. 
+An interesting heuristic remark is that, for every finite set $S$ of clauses which is unsatisfiable and which has a refutation one could possibly construct, there is at least one reasonably small finite subset of the Herbrand universe of $S$ such that $P(S)$ is unsatisfiable and such that $P$ is \emph{minimal} in the sense that $Q(S)$ is satisfiable for each proper subset $Q$ of $P$. Such a $P$ was called a \emph{proof set} for $S$ in \cite{robinson_1963}. If only, then, a benevolent and omniscient demon were available who could provide us, in reasonable time, with a proof set $P$ for each unsatisfiable finite set $S$ of clauses that we considered, we could simply arrange to saturate $S$ over $P$ and then extract a suitable refutation of $S$ from the resulting finite unsatisfiable set $P(S)$ of ground clauses. This was in fact the underlying scheme of a computer program reported in \cite{robinson_1963}, in which the part of the demon is played, as best his ingenuity allows, by the mathematician using the program. What is really wanted, to be sure, is a simulation of the proof set demon on the computer; but this would appear, intuitively, to be out of the question.
 
 It turns out that it, is not completely out of the question. In fact, the method developed in the remainder of this paper seems to come quite close to supplying the required demon as a computing process. In Section 4 we take the first major step towards the development of this method by proving more versions of Herbrand's Theorem. We also give a preliminary informal account of the rest of the argument, pending a rigorous treatment in succeeding sections.
 
@@ -201,29 +194,25 @@ the method of Davis-Putnam \cite{davis_1960} would be hard to improve on from th
 of view of efficiency. However, we now give another method, far less efficient
 than theirs, which plays only a theoretical role in our development, and which
 is much simpler to state: given the finite set $S$ of ground clauses, form successively
-the sets $S, \mathscr{R}(S), \mathscr{R}^2(S),\dotsm $, until either some $\mathscr{R}^n(S)$ contains $\square$, or does not
-contain $\square$ but is equal to $\mathscr{R}^{n+1}(S)$. In the former case, $S$ is unsatisfiable; in the
+the sets $S, \mathcal{R}(S), \mathcal{R}^2(S),\dotsm $, until either some $\mathcal{R}^n(S)$ contains $\square$, or does not
+contain $\square$ but is equal to $\mathcal{R}^{n+1}(S)$. In the former case, $S$ is unsatisfiable; in the
 latter case, $S$ is satisfiable. One or other of these two terminating conditions
 must eventually occur, since the number of distinct clauses formable from the
 finite set of literals which occur in $S$ is finite, and hence in the nested infinite
 sequence:
 
-\subsection{} $S \subseteq \mathscr{R}(S) \subseteq \mathscr{R}^2(S) \subseteq \dotsm \subseteq \mathscr{R}^n(S) \subseteq \dotsm$,\\not all of the inclusions are proper, since resolution introduces no new literals.
+\subsection{} $S \subseteq \mathcal{R}(S) \subseteq \mathcal{R}^2(S) \subseteq \dotsm \subseteq \mathcal{R}^n(S) \subseteq \dotsm$, \\ not all of the inclusions are proper, since resolution introduces no new literals.
 
 In view of the finite termination of the described process we can prove its
 correctness, as stated above, in the form of the ground resolution theorem. 
 
 
 \begin{grt}{Ground Resolution Theorem}\label{grt}
-If $S$ is any finite set of ground clauses, then $S$ is unsatisfiable if and only if $\mathscr{R}^n(S)$ contains $\square$, for some $n\geqq O$. 
+If $S$ is any finite set of ground clauses, then $S$ is unsatisfiable if and only if $\mathcal{R}^n(S)$ contains $\square$, for some $n\geqq O$. 
 \end{grt}
 
 PROOF. The "if" part is immediate. To prove the "only if" part, let $T$ be the
-terminating set $\mathscr{R}^n(S)$ in the sequence (4.1) above, so that $T$ is closed under ground resolution. We need only show that if $T$ does not contain $\square$, then $T$ is satisfiable, and hence $S$ is satisfiable since $S$ $\subseteq$ $T$. Let $L_1, \dotsm , L_k$ be all the distinct atomic formulas which occur in $T$ or whose complements occur in $T$. Let $M$ be the model defined as follows: $M_0$ is the empty set; and for $0 < j \leq k$, $M_j$ is the set $M_{j-1} \cup \{L_j\}$, unless some clause in $T$ consists entirely of complements of literals in the set $M{j_1}\cup\{\sim L_j\}$. in which case $M_j$ is the set $M_{j-1}\cup\{\sim L_j\}$. Finally, $M$ is $M_k$. Now if $T$ does not contain $\square$, $M$ satisfies $T$. For otherwise there is a least $j$, $0 < j \leq k$, such that some clause (say, $C$) in $T$ consists entirely of complements of literals in the set $M_j$. By the definition of $M_j$, therefore, $M_j$ is $M_{j-1} \cup \{\sim L_j\}$. Hence by the leastness of $j$, $C$ contains $L_j$. But since $M_j$ is $M_{j-1}\cup \{\sim L_j\}$, there is some clause (say, $D$) in $T$ which consists entirely of complements of literals in the set $M{j_1}\cup \{L_j\}$. Hence by the leastness of $j$, $D$ contains $\sim L_j$. Then the clause $B = (C - \{L_j\}) \cup (D - \{\sim L_j\})$ consists entirely of complements of literals in the set $M_{j-1}$ , unless $B$ is $\square$. But $B$ is a
-
-\newpage
-
-ground resolvent of $C$ and $D$, hence is in $T$, hence is not $\square$. Thus the leastness of $j$ is contradicted and the theorem is proved.
+terminating set $\mathcal{R}^n(S)$ in the sequence (4.1) above, so that $T$ is closed under ground resolution. We need only show that if $T$ does not contain $\square$, then $T$ is satisfiable, and hence $S$ is satisfiable since $S$ $\subseteq$ $T$. Let $L_1, \dotsm , L_k$ be all the distinct atomic formulas which occur in $T$ or whose complements occur in $T$. Let $M$ be the model defined as follows: $M_0$ is the empty set; and for $0 < j \leq k$, $M_j$ is the set $M_{j-1} \cup \{L_j\}$, unless some clause in $T$ consists entirely of complements of literals in the set $M_{j_1}\cup\{\sim L_j\}$. in which case $M_j$ is the set $M_{j-1}\cup\{\sim L_j\}$. Finally, $M$ is $M_k$. Now if $T$ does not contain $\square$, $M$ satisfies $T$. For otherwise there is a least $j$, $0 < j \leq k$, such that some clause (say, $C$) in $T$ consists entirely of complements of literals in the set $M_j$. By the definition of $M_j$, therefore, $M_j$ is $M_{j-1} \cup \{\sim L_j\}$. Hence by the leastness of $j$, $C$ contains $L_j$. But since $M_j$ is $M_{j-1}\cup \{\sim L_j\}$, there is some clause (say, $D$) in $T$ which consists entirely of complements of literals in the set $M_{j_1}\cup \{L_j\}$. Hence by the leastness of $j$, $D$ contains $\sim L_j$. Then the clause $B = (C - \{L_j\}) \cup (D - \{\sim L_j\})$ consists entirely of complements of literals in the set $M_{j-1}$ , unless $B$ is $\square$. But $B$ is a ground resolvent of $C$ and $D$, hence is in $T$, hence is not $\square$. Thus the leastness of $j$ is contradicted and the theorem is proved.
 
 The Ground Resolution Theorem now allows us to state a more specific form
 of Theorem 1, namely,
@@ -231,16 +220,16 @@ of Theorem 1, namely,
 
 \begin{p7theorem}{2}\label{two}
 If $S$ is any finite set of clauses, then $S$ is unsatisfiable if and only
-if, jut some finite subset $P$ of the Herbrand universe of $S$, and some $n \geqq O$, $\mathscr{R}^n(P(S))$ contains $\square$.
+if, jut some finite subset $P$ of the Herbrand universe of $S$, and some $n \geqq O$, $\mathcal{R}^n(P(S))$ contains $\square$.
 \end{p7theorem}
 
-It is now possible to state informally the essential steps of the remaining part of the development. We are going to generalize the notions of ground resolvent and ground resolution, respectively, to the notions of resolvent and resolution. by removing the restriction that the clauses involved be only ground clauses. Any two clauses will then have zero, one or more clauses as their resolvents, but in no case more than finitely many. In the special ease that $C$ and $D$ are ground clauses, their resolvents, if any, are precisely their ground resolvents as already defined. Similarly, the notations $\mathscr{R}(S), \mathscr{R}(S)$ will be retained, with $S$ allowed to be any set of clauses. $\mathscr{R}(S)$ will then denote the resolution of $S$, which
-is the set of clauses consisting of all members of $S$ together with all resolvents of all pairs of members of $S$. Again, $\mathscr{R}(S)$ is precisely the ground resolution of $S$, already defined, whenever $S$ happens to be a set of ground clauses. 
+It is now possible to state informally the essential steps of the remaining part of the development. We are going to generalize the notions of ground resolvent and ground resolution, respectively, to the notions of resolvent and resolution. by removing the restriction that the clauses involved be only ground clauses. Any two clauses will then have zero, one or more clauses as their resolvents, but in no case more than finitely many. In the special ease that $C$ and $D$ are ground clauses, their resolvents, if any, are precisely their ground resolvents as already defined. Similarly, the notations $\mathcal{R}(S), \mathcal{R}(S)$ will be retained, with $S$ allowed to be any set of clauses. $\mathcal{R}(S)$ will then denote the resolution of $S$, which
+is the set of clauses consisting of all members of $S$ together with all resolvents of all pairs of members of $S$. Again, $\mathcal{R}(S)$ is precisely the ground resolution of $S$, already defined, whenever $S$ happens to be a set of ground clauses. 
 
 The details of how this generalization is done must await the formal definitions in Section 5. However, an informal grasp of the general notion of resolution is obtainable now, prior to its exact treatment, from simply contemplating the fundamental property which it will be shown to possess: \emph{resolution is semicommutative with saturation.} More exactly, this property is as stated in the following basic Lemma, which is proved in Section 5:
 
 \begin{p7lemma}{Lemma}\label{p7lemma}
-If $S$ is any set of clauses, and $P$ is any subset of the Herbrand universe of $S$, then: $\mathscr{R}(P(S)) \subseteq P(\mathscr{R}(S))$.
+If $S$ is any set of clauses, and $P$ is any subset of the Herbrand universe of $S$, then: $\mathcal{R}(P(S)) \subseteq P(\mathcal{R}(S))$.
 \end{p7lemma}
 
 The fact is, as will be shown here, that any ground clause which can be obtained by \emph{first} instantiating over P a pair $C$, $D$ of clauses in $S$, and \emph{then} forming a ground resolvent of the two resulting instances, cast also be obtained by instantiating over $P$ one of the finitely many resolvents of $C$ and $D$.
@@ -249,41 +238,37 @@ It is an easy corollary of the basic Lemma that nth resolutions are also semicom
 
 \begin{p7corollary}{}\label{p7corollary}
 If $S$ is any set of clauses and $P$ is any subset of the Herbrand
-universe of $S$, then: $\mathscr{R}^n(P(S)) \subseteq P(\mathscr{R}^n(S))$ for all $n \geqq O$.
+universe of $S$, then: $\mathcal{R}^n(P(S)) \subseteq P(\mathcal{R}^n(S))$ for all $n \geqq O$.
 \end{p7corollary}
 
 %https://tex.stackexchange.com/a/27284
 \begin{proof}
-    By induction on $n$. $\mathscr{R}^0(P(S)) = P(S) = P(\mathscr{R}^0(S))$, so that the case $n = 0$ is trivial. And if, for $n \geqq 0$, $\mathscr{R^n}(P(S)) \subseteq P(\mathscr{R}^n(S))$, then:
+    By induction on $n$. $\mathcal{R}^0(P(S)) = P(S) = P(\mathcal{R}^0(S))$, so that the case $n = 0$ is trivial. And if, for $n \geqq 0$, $\mathcal{R}^n(P(S)) \subseteq P(\mathcal{R}^n(S))$, then:
     \begin{align*}
-        \mathscr{R}^{n+1}(P(S)) &= \mathscr{R}(\mathscr{R}^n(P(S))) && \text{by definition of $\mathscr{R}^{n+1}$}\\
-                                &\subseteq \mathscr{R}(P(\mathscr{R}^n(S))) && \text{by the induction hypothesis, as $\mathscr{R}$ preserves inclusion,}\\
-                                &\subseteq P(\mathscr{R}(\mathscr{R}^n(S))) && \text{by the Lemma,}\\
-                                &= P(\mathscr{R}^{n+1}(S)) && \text{by definition of $\mathscr{R}^{n+1}$,}
+        \mathcal{R}^{n+1}(P(S)) &= \mathcal{R}(\mathcal{R}^n(P(S))) && \text{by definition of $\mathcal{R}^{n+1}$}\\
+                                &\subseteq \mathcal{R}(P(\mathcal{R}^n(S))) && \text{by the induction hypothesis, as $\mathcal{R}$ preserves inclusion,}\\
+                                &\subseteq P(\mathcal{R}(\mathcal{R}^n(S))) && \text{by the Lemma,}\\
+                                &= P(\mathcal{R}^{n+1}(S)) && \text{by definition of $\mathcal{R}^{n+1}$,}
     \end{align*}
 \end{proof}
 \noindent and the Corollary is proved.
-\newpage
 
 Now by the above Corollary to the basic Lemma we may immediately obtain
 a third version, of Herbrand's Theorem from Theorem 2: 
 
 \begin{pg8theorem3}{3}\label{pg8theorem3}
-If $S$ is any finite set of clauses, then $S$ is unsatisfiable if and only if, for soem finite subset $P$ of the Herbrand universe of $S$, and some $n\geqq 0$, $P\mathscr{R}^n(S)$ contains $\square$.
+If $S$ is any finite set of clauses, then $S$ is unsatisfiable if and only if, for soem finite subset $P$ of the Herbrand universe of $S$, and some $n\geqq 0$, $P\mathcal{R}^n(S)$ contains $\square$.
 \end{pg8theorem3}
 
 Here, the order of the saturation and $n$th resolution operations is reversed.
 Now a rather surprising simplification of Theorem 3 can be made, on the basis
 of the remark that mere replacement of variables by terms cannot produce $\square$
-from a nonempty clause. Hence $P(\mathscr{R}^n(S))$ will contain $\square$ if and only if $\mathscr{R}^n(S)$
-contains $\square$. From Theorem 3, therefore, we immediately obtain our final version
-of Herbrand's Theorem, which is the main result of this paper, and which we
-call:
+from a nonempty clause. Hence $P(\mathcal{R}^n(S))$ will contain $\square$ if and only if $\mathcal{R}^n(S)$ contains $\square$. From Theorem 3, therefore, we immediately obtain our final version of Herbrand's Theorem, which is the main result of this paper, and which we call:
 
 
 \begin{pg8rt}
 If $S$ is any finite set of clauses, then S is unsatisfiable
-if and only if $\mathscr{R}^n(S)$ contains $\square$, for some $n\geqq 0$. 
+if and only if $\mathcal{R}^n(S)$ contains $\square$, for some $n\geqq 0$. 
 \end{pg8rt}
 
 The statement of the Resolution Theorem is just that of the Ground Resolution Theorem with the word "ground" omitted. Apart, therefore, from the somewhat more complex way in which the resolvents of two clauses are computed
@@ -291,12 +276,12 @@ The statement of the Resolution Theorem is just that of the Ground Resolution Th
 testing a finite set S of clauses for unsatisfiability is exactly like that given earlier for the ease that S is a set of ground clauses, and indeed it. automatically reverts to that method when it is applied to a finite set of ground clauses. However, it is no longer the ease in general that the nested sequence
 
 \begin{align*}
-    S \subseteq \mathscr{R}(S) \subseteq \mathscr{R}^2(S) \subseteq \dotsm \subseteq \mathscr{R}^n(S) \subseteq \dotsm
+    S \subseteq \mathcal{R}(S) \subseteq \mathcal{R}^2(S) \subseteq \dotsm \subseteq \mathcal{R}^n(S) \subseteq \dotsm
 \end{align*}
 
 must terminate for all finite $S$. By Church's Theorem this could not be so, for otherwise we would have a decision procedure for satisfiability for our formulation of first-order logic. 
 
-Consider now the "proof set demon" discussed in Section 3. We there supposed that if see were given a proof set $P$ for an unsatisfiable set $S$ of clauses, all we would have to do would be to compute until we encountered the first $\mathscr{R}^n(P(S))$ which contains $\square$, in order to obtain from it a formal refutation of $S$. But the Resolution Theorem assures us that by the time we had computed ,$\mathscr{R}^n(S)$, if not before, we would have turned up $\square$, despite our ignorance of $P$. In this sense the Resolution Theorem makes the proof set demon's role unnecessary.
+Consider now the "proof set demon" discussed in Section 3. We there supposed that if see were given a proof set $P$ for an unsatisfiable set $S$ of clauses, all we would have to do would be to compute until we encountered the first $\mathcal{R}^n(P(S))$ which contains $\square$, in order to obtain from it a formal refutation of $S$. But the Resolution Theorem assures us that by the time we had computed ,$\mathcal{R}^n(S)$, if not before, we would have turned up $\square$, despite our ignorance of $P$. In this sense the Resolution Theorem makes the proof set demon's role unnecessary.
 
 In Section 5 we introduce a little more formal apparatus by a second batch of definitions, and pay off our debts by defining the general notion of resolution and proving the basic Lemma.
 
@@ -305,15 +290,11 @@ In Section 5 we introduce a little more formal apparatus by a second batch of de
 The following definitions are concerned with the operation of instantiation, i.e. substitution of terms for variables in well-formed expressions and in sets of well-formed expressions, and with the various auxiliary notions needed to define resolution in general.
 
 \subsection{Substitution components.} A substitution component is any expression of
-\newpage
-
-\noindent the form $T/V$, where $V$ is any variable and $T$ is any term different from $V$. $V$ is
-called the \emph{variable} of the component $T/V$, and $T$ is called the \emph{term} of the component $T/V$.
+the form $T/V$, where $V$ is any variable and $T$ is any term different from $V$. $V$ is called the \emph{variable} of the component $T/V$, and $T$ is called the \emph{term} of the component $T/V$.
 
 \subsection{Substitutions.}
 
-A substitution is any finite set (possibly empty) of substitution components none of the variables of which are the same. If $P$ is any set;
-of terms, and the terms of the components of the substitution $\theta$ are all in $P$, we say" that $\theta$ is a substitution over $P$. We write the substitution whose components are $T_1/V_1, \dotsm , T_k/V_k$ as $\{T_1/V_1, \dotsm, T_k/V_k\}$, with the understanding that the order of the components is immaterial. We use lowercase Greek letters to denote substitutions. In particular, $\epsilon$ is the \emph{empty substitution}.
+A substitution is any finite set (possibly empty) of substitution components none of the variables of which are the same. If $P$ is any set; of terms, and the terms of the components of the substitution $\theta$ are all in $P$, we say" that $\theta$ is a substitution over $P$. We write the substitution whose components are $T_1/V_1, \dotsm , T_k/V_k$ as $\{T_1/V_1, \dotsm, T_k/V_k\}$, with the understanding that the order of the components is immaterial. We use lowercase Greek letters to denote substitutions. In particular, $\epsilon$ is the \emph{empty substitution}.
 
 \subsection{Instantiation.}
 
@@ -358,7 +339,6 @@ Let $\sigma = \{T_1/V_1,\dotsm,T_k/V_k\}$, $\lambda = \{U_1/W_1,\dotsm,U_m/W_m\}
 \end{proof}
 
 %TODO use this as a ref for the hard to read subscript
-\newpage
 $E_0T_{1_1}E_1\dotsm T_{i_n}E_n$, and $(E\sigma)\lambda = \overline{E}_0\overline{T}_{i_1}\overline{E}_1\dotsm\overline{T}_{i_n}\overline{E}_n$, where each $\overline{T}_{i_i}$ is $T_{i_i}\lambda_i$ and each $\overline{E}_i$ is $E_i\lambda^\prime$, where $\lambda^\prime$ is the set of all components of $\lambda$ whose variables are not among $V_1,\dotsm,V_k$ (since none of these variables occur in any $E_i$). But $\sigma\lambda = \sigma^\prime \cup \lambda^\prime$, where each component of $\sigma\prime$ is just $\overline{T}_i/V_i$ whenever $\overline{T}_i$ is different from $V_i$. Hence $E(\sigma\lambda) = \overline{E}_0\overline{T}_{i_i}\overline{E}_1\dotsm\overline{T}_{i_n}\overline{E}_n$
 
 \subsubsection{}
@@ -417,9 +397,6 @@ nonempty set $A$ of well-formed expressions, is called the Unification Algorithm
 
 This definition requires justification in the form of a proof that the given
 process is in fact an algorithm. In fact the process always terminates for any
-
-\newpage
-
 finite nonempty set of well-formed expressions, for otherwise there would be
 generated an infinite sequence $A, A\sigma_1,A\sigma_2,\dotsm$ of finite nonempty sets of well-formed expressions with the property that each successive set contains one less variable than its predecessor (namely, $A\sigma_k$ contains $V_k$ but $A\sigma_{k+1}$ does not). But this is impossible, since $A$ contains only finitely many distinct variables.
 
@@ -450,13 +427,13 @@ By the remark following definition (5.10) it is dear that two clauses $C$ and $D
 
 \subsection{Resolutions.}
 If $S$ is any set of clauses then the resolution of $S$, denoted
-by $\mathscr{R}(S)$, is the set of all clauses which are members of $S$ or resolvents of members of $S$.
+by $\mathcal{R}(S)$, is the set of all clauses which are members of $S$ or resolvents of members of $S$.
 
 \subsection{$N$-th resolution.}
 The $n$\-th resolution of $S$, where $S$ is any set of clauses,
-is denoted by $\mathscr{R}^n(S)$ and is defined for all $n \geqq 0$ exactly analogously to definition (2.21).
+is denoted by $\mathcal{R}^n(S)$ and is defined for all $n \geqq 0$ exactly analogously to definition (2.21).
 
-This completes our second group of definitions. The definition of $\mathscr{R}(S)$ as given is adequate for our theoretical argument, but in practice one would not include in it both the resolvents of $\langle C, D\rangle$ and the resolvents of $\langle D, C\rangle$, since these are in fact identical up to a change of variables. When $C$ and $D$ are both ground clauses, the resolvents of $\langle C, D\rangle$ are actually identical with those of $\langle D, C\rangle$, and are precisely the ground resolvents of $C$ and $D$, as is easily verified.
+This completes our second group of definitions. The definition of $\mathcal{R}(S)$ as given is adequate for our theoretical argument, but in practice one would not include in it both the resolvents of $\langle C, D\rangle$ and the resolvents of $\langle D, C\rangle$, since these are in fact identical up to a change of variables. When $C$ and $D$ are both ground clauses, the resolvents of $\langle C, D\rangle$ are actually identical with those of $\langle D, C\rangle$, and are precisely the ground resolvents of $C$ and $D$, as is easily verified.
 
 It now remains to prove the basic Lemma, which will be done after we have
 first proved the following theorem establishing the basic property of unification, which we need hi the proof of the Lemma and elsewhere in our theory: 
@@ -474,14 +451,10 @@ Unification Algorithm will terminate, when applied to A, at step 2; and that
 for each $k \geqq 0$  until the Unification Algorithm so terminates, the equation
 \end{proof}
 
-\newpage
-
 THE SCAN OF THIS PAGE IS CUT OFF ON THE RIGHT SIDE
 
 \subsection{}
 $\theta = \sigma_k\lambda_k$
-
-\newpage
 \noindent
 bets, or complements of members, of the set $L\xi_c \cup M\eta_D$. Hence by the Unification Theorem $N$ has a most general unifier $\sigma_N$, and there is a substitution $\lambda$ over $P$ such that $\theta = \sigma_N\lambda$ Hence $L\xi_C \sigma_N\lambda = L\alpha$ and $M\eta _D\sigma_N = M\beta$, and therefore $L\xi_C\sigma_N$ and $M\eta_D\sigma_N$ are singletons whose members are complements. It follows that $\langle L, M, N\rangle$ is a key triple of $\langle C, D\rangle$, and hence that the clause
 
@@ -489,15 +462,15 @@ bets, or complements of members, of the set $L\xi_c \cup M\eta_D$. Hence by the 
     B = (C - L)\xi_C\sigma_N \cup (D - M)\eta D\sigma_N
 \end{align*}
 
-is a resolvent of $C$ and $D$; hence $B \in \mathscr{R}(S)$. But since $\theta = \sigma_N\lambda$, it follows by (5.5.4) that $A = B\lambda$ and therefore that $A \in P(\mathscr{R}(S))$. The proof is complete.
+is a resolvent of $C$ and $D$; hence $B \in \mathcal{R}(S)$. But since $\theta = \sigma_N\lambda$, it follows by (5.5.4) that $A = B\lambda$ and therefore that $A \in P(\mathcal{R}(S))$. The proof is complete.
 
-The hypotheses of the Lemma do not entail the opposite inclusion $P(\mathscr{R}(S)) \subseteq \mathscr{R}(P(S))$. As a simple counter example, consider:
+The hypotheses of the Lemma do not entail the opposite inclusion $P(\mathcal{R}(S)) \subseteq \mathcal{R}(P(S))$. As a simple counter example, consider:
 
 \begin{align*}
     S = \{\{Q(x,f(y))\},\{\sim Q(g(y),x)\}\}, && P = \{a\}.
 \end{align*}
 
-A short investigation shows that $P(\mathscr{R}(S))$ contains $\square$ (since $\mathscr{R}(S)$ does while $\mathscr{R}P(S))$ does not. Thus $S$ is unsatisfiable, but $P$ is not a proof set for $S$.
+A short investigation shows that $P(\mathcal{R}(S))$ contains $\square$ (since $\mathcal{R}(S)$ does while $\mathcal{R}(P(S))$ does not). Thus $S$ is unsatisfiable, but $P$ is not a proof set for $S$.
 
 \section{The Resolution Principle: Refutations}
 
@@ -538,8 +511,6 @@ Algorithm that $\sigma_N$ is the substitution with the components:
 
 \noindent
 and that then $C_1\xi_{C_1\sigma_N}$ and $C_{2\eta C_2\sigma_N}$ are singletons whose members are complements.
-
-\newpage
 
 This example illustrates the way in which a proof set is automatically computed as a by-product; of the resolution operation. The terms of the above substitution components become those of a proof set for $\{C_1 , C_2\}$ when the variable $y_1$ is replaced throughout by any term of the Herbrand universe of $\{C_1, C_2\}$, e.g. by the individual constant \"a.\" It is interesting to note that the earliest level of this Herbrand universe $H$ to include such a proof set is $H_5$, which has of the order of $10^64$ members. Consequently $H_5(\{C_1, C_2\})$ has of the order of $10^256$ members. A level-saturation procedure would not find this example feasible.
 
@@ -582,14 +553,12 @@ as is easily verified. $C_8$ is the only resolvent of $\langle C_6, C_7\rangle$,
 
 This example illustrates the way in which the single steps in a refutation made with the resolution principle go beyond, in their complexity, the capacity of the human mind to apprehend their correctness in one single intellectual act. By taking larger bites, so to speak, the resolution principle in this ease permits a very compact, not to say elegant, piece of reasoning. $C_2$ and $C_5$ are not used as premisses in the refutations, although this has nothing to do with the resolution principle. Hence a nonredundant refutation for this example is the sequence: $C_1, C_3, C_4, C_6, C_7, C_8, \square$.
 
-\newpage
-
 \section{Refutation Procedures, Search Principles}
 
 The foregoing discussion was intended only to establish the theoretical framework, in the form of a special system of logic, for the design of theorem-proving programs, i.e. in the present case, refutation procedures. No attempt has been made thus far to discuss the question of developing efficient refutation procedures, and in this final section of the paper we briefly discuss this question. 
 
 The raw implementation of the Resolution Theorem would produce a very 
-inefficient refutation procedure, namely, the procedure would consist of computing, given the finite set $S$ of clauses as input, the sequence of sets $S, \mathscr{R}(S), \mathscr{R}^2(S),\dotsm,$ until one is encountered, say, $\mathscr{R}^n(S)$, which either contains $\square$ or else does not contain $\square$ but is equal to its successor $\mathscr{R}^{n+1}(S)$. In the former case, a refutation of $S$ is obtained by tracing back the genesis of $\square$; in the latter case the conclusion is that $S$ is satisfiable. By Church's Theorem \cite{church_1936} we know that for some inputs $S$ this procedure, and in general all correct refutation procedures, will not terminate in either of these two ways but will continue computing indefinitely. 
+inefficient refutation procedure, namely, the procedure would consist of computing, given the finite set $S$ of clauses as input, the sequence of sets $S, \mathcal{R}(S), \mathcal{R}^2(S),\dotsm,$ until one is encountered, say, $\mathcal{R}^n(S)$, which either contains $\square$ or else does not contain $\square$ but is equal to its successor $\mathcal{R}^{n+1}(S)$. In the former case, a refutation of $S$ is obtained by tracing back the genesis of $\square$; in the latter case the conclusion is that $S$ is satisfiable. By Church's Theorem \cite{church_1936} we know that for some inputs $S$ this procedure, and in general all correct refutation procedures, will not terminate in either of these two ways but will continue computing indefinitely. 
 
 In some cases we can foresee the nonterminating behavior. Consider the example of the set $S$ whose members are:
 
@@ -614,11 +583,10 @@ If $S$ is any finite set of clauses, and $L\in C\in S$ is a literal which is pur
 If $S$ is satisfiable then so is $S - \{C\}$ since it is a subset of $S$. If $S - \{C\}$
 is satisfiable, then there is a model $A$ of $S - \{C\}$, every literal in which occurs 
 in some clause of $H(S)$, where $H$ is the Herbrand universe of $S$. Let $N$ be the 
-set of all ground literals $L\theta$, where $\theta$ ks a substitution over $H$, and let $K$ consist 
-of all complements of members of $N$. Then the set $P = N \cup (A - K)$ is a
+set of all ground literals $L\theta$, where $\theta$ ks a substitution over $H$, and let $K$ consist of all complements of members of $N$. Then the set $P = N \cup (A - K)$ is a
 \end{proof}
 
-\newpage
+
 model; moreover it is a model $S$, since every clause in $H(\{C\})$ contains a member of $P$ (namely a member of $N$), and every clause in $H(S - \{C\}$ contains a member of $P$, namely a member of $A - K$; for no clause in $H(S - \{C\}$ contains a member of $K$, since otherwise, if $D\beta$ were, such a clause, with $D \in S - \{C\}$, then there would be an $M\subseteq D$ such that $M\beta$ would be a singleton containing a member of $K$. Then there would be some substitution $a$ over $H$ such that $\{L\}\alpha, M\beta$ contained complementary singletons. Hence by the same argument as in the proof of the Lemma, there would be a key triple $\langle\{L\}, M, N\rangle$ 
 of the pair $\langle C,D\rangle$, contradicting the purity of $L$ in $S$. The theorem is proved.
 
@@ -659,7 +627,7 @@ member of $M$. But every ground instance $D\lambda$ of $D$ includes the ground i
 
 \end{proof}
 
-\newpage
+
 The \emph{subsumption principle} is then simply the following: \emph{One may delete, from a
 finite set $S$ of clauses, any clause $D$ which is subsumed by a clause in $S - \{D\}$.}
 
@@ -692,7 +660,7 @@ A particularly useful application of the subsumption principle is the following:
 $R$ by the resolution principle we may simultaneously delete, by the subsumption principle, that one of $C$, $D$ which $R$ subsumes. This combined operation 
 amounts to replacing $C$ or $D$ by $R$; accordingly we name the principle involved the \emph{replacement principle}.
 
-\newpage
+
 
 The following example, used by Gilmore \cite{gilmore_1960}, Davis-Putnam \cite{davis_1960} and Friedman \cite{friedman_1963}, illustrates the utility of these search principles in speeding up convergence.\\
 \noindent
@@ -702,7 +670,7 @@ Consider the set S whose members are:
     & C_1 : && \underbrace{\{P(x_1,x_2)}_{(6)} \\
     & C_2 : && \{\underbrace{\sim P(y_2,f(y_1,y_2)),}_{(1)}, \underbrace{\sim P(f(y_1,y_2),f(y_1,y_2))}_{(2)}, Q(y_1,y_2)\} \\
     & C_3 : && \{\underbrace{\sim P(y_2, f(y_1,y_2))}_{(3)}, \underbrace{\sim P(f(y_1,y_2),f(y_1,y_2))}_{(4)},
-        \underbrace{\sim Q(y_1,f(y_1,y_2))}_{(5)}, \sim Q(f(y_1,y_2),f(y_1,y_2))\}
+        \underbrace{\sim Q(y_1,f(y_1,y_2))}_{(5)}, \\ & && \quad \sim Q(f(y_1,y_2),f(y_1,y_2))\}
 \end{align*}
 \noindent
 and we obtain the set $S^\prime$ whose only members are:
@@ -723,7 +691,7 @@ There are further search principles of this same general sort, which are less si
 
 \emph{Acknowledgments}. I should like to express my indebtedness to my colleagues Dr. George A. Robinson and Dr. Lawrence T. Wos, of the Argonne National Laboratory, and to Professor William Davidon of Haverford College, for their
 
-\newpage
+
 invaluable insights and criticisms concerning the basic concepts of this paper. My thanks are also due to the ACM referees, and to Dr. T. Hailperin of the Sandia Corporation, whose comments on criticisms of a prior version of the paper greatly facilitated the writing of the present complete revision.
 \noindent
 Received September, 1963; Revised August, 1964
