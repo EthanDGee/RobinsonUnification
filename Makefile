@@ -1,6 +1,6 @@
 DOCNAME=main
 
-PDFLATEX="pdflatex -interaction=nonstopmode -syntex=1"
+PDFLATEX="pdflatex -interaction=nonstopmode -synctex=1"
 
 .PHONY: $(DOCNAME).pdf all clean
 
